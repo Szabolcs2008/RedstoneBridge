@@ -69,7 +69,14 @@ public class RedstoneEventListener implements Listener {
 
                         } else if (leverConfig.getString(key+".mode").equalsIgnoreCase("rgb")) {
                             String color = config.getString("colors."+powerLevel);
-                            json = "{\"name\": \""+key+"\", \"mode\": \"RGB\", \"powered\": "+powered+", \"state\": "+powerLevel+", \"color\": \""+color+"\"}";
+                            json = "{\"name\": \""+key+"\", \"mode\": \"RGB\", \"powered\": "+powered+", \"power-level\": "+powerLevel+", \"color\": \""+color+"\"}";
+                            if (config.getBoolean("debug")) {
+                                Bukkit.getLogger().info("Registered block updated: "+Arrays.toString(coords)+", State: "+powerLevel+", Color: "+config.getString("colors."+powerLevel));
+                            }
+
+                        } else if (leverConfig.getString(key+".mode").equalsIgnoreCase("analogue")) {
+                            String color = config.getString("colors."+powerLevel);
+                            json = "{\"name\": \""+key+"\", \"mode\": \"ANALOGUE\", \"powered\": "+powered+", \"power-level\": "+powerLevel+"}";
                             if (config.getBoolean("debug")) {
                                 Bukkit.getLogger().info("Registered block updated: "+Arrays.toString(coords)+", State: "+powerLevel+", Color: "+config.getString("colors."+powerLevel));
                             }

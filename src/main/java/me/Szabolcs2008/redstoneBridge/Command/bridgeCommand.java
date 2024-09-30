@@ -131,10 +131,10 @@ public class bridgeCommand implements CommandExecutor, TabCompleter {
             FileConfiguration bridgeConfig = RedstoneBridge.getBridgeConfig();
             for (String name : bridgeConfig.getKeys(false)) {
                 ConfigurationSection bridge = bridgeConfig.getConfigurationSection(name);
-                commandSender.sendMessage("  §c§n"+name);
-                commandSender.sendMessage("    §7Position: §4"+bridge.getInt("block-x")+" §a"+bridge.getInt("block-y")+" §9"+bridge.getInt("block-z"));
-                commandSender.sendMessage("    §7Mode: §b"+bridge.getString("mode"));
-                commandSender.sendMessage("    §7URL: §f§o"+bridge.getString("url"));
+                commandSender.sendMessage(" §c§n"+name);
+                commandSender.sendMessage(" §8| §7Position: §4"+bridge.getInt("block-x")+" §a"+bridge.getInt("block-y")+" §9"+bridge.getInt("block-z"));
+                commandSender.sendMessage(" §8| §7Mode: §b"+bridge.getString("mode"));
+                commandSender.sendMessage(" §8| §7URL: §f§o"+bridge.getString("url"));
 
             }
         }
@@ -151,7 +151,7 @@ public class bridgeCommand implements CommandExecutor, TabCompleter {
 
             } else if (args[0].equalsIgnoreCase("add")) {
                 if (args.length == 3) {
-                    String[] modes = {"SWITCH", "RGB"};
+                    String[] modes = {"SWITCH", "RGB", "ANALOGUE"};
                     StringUtil.copyPartialMatches(args[2], Arrays.asList(modes), tabCompletions);
                 } else if (args.length == 4 || args.length == 5 || args.length == 6) {
                     if (commandSender instanceof Player player) {
