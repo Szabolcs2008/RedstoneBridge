@@ -1,0 +1,10 @@
+name: RedstoneBridge
+version: '1.0'
+main: me.Szabolcs2008.redstoneBridge.RedstoneBridge
+api-version: '1.21'
+prefix: redstonebridge
+authors: [ Szabolcs2008 ]
+website: https://github.com/szabolcs2008
+commands:
+  bridge:
+    description: "Main plugin command"
