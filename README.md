@@ -1,4 +1,4 @@
-# RedstoneBridge
+# RedstoneBridge (plugin version discontinued)
 A spigot plugin to connect Minecraft redstone with real life lights.
 
 # Setting up
